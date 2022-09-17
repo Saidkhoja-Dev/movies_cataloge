@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>4-dars Uy ishi</title>
+</head>
+
+<body class="gradient">
+    <div class="wrapper">
+        <div class="row">
+            <h1 class="text-center p-3 fw-bold text-light">Movies Catalog</h1>
+            
+            <div class="col-12 col-lg-4 position-relative">
+                <div class="position-sticky w-100" style="top: 30px; z-index: 1;">
+                    <form class="form movies__form">
+                        <input class="form-control mb-3 input__searche" type="text" placeholder="Type Movies Name">
+                        <input class="form-control mb-3 input__year" type="number" placeholder="Type Movies Year" min="1950" max="2023" step="1">
+                        <input class="form-control mb-3 input__rating" type="number" placeholder="Type Movies Rating" min="1" max="10" step="0.1">
+                        
+                        <select class="form-select mb-3 input__category">
+                            <option value="all">All</option>
+                        </select>
+                        
+                        <select class="form-select mb-3 input__sorting">
+                            <option value="dont-sort">Don't Sort</option>
+                            <option value="rating-high-low">Rating (High to Low)</option>
+                            <option value="rating-low-high">Rating (Low to High)</option>
+                            <option value="year-new-old">Year (New to Old)</option>
+                            <option value="year-old-new">Year (Old to New)</option>
+                            <option value="a-z">A-Z</option>
+                            <option value="z-a">Z-A</option>
+                        </select>
+                        <button class="btn btn-primary w-100 mb-5">Searche</button>
+                    </form>
+                    
+                    <h2 class="h2 fw-bold text-light">Bookmarket movies</h2>
+                    
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item">
+                            <p class="text-dark">Avengers:Infinity War</p>
+                            
+                            <button class="btn btn-danger">Remove</button>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="text-dark">Avengers:Infinity War</p>
+                            
+                            <button class="btn btn-danger">Remove</button>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="text-dark">Avengers:Infinity War</p>
+                            
+                            <button class="btn btn-danger">Remove</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-lg-8">
+                <h2 class="h2 text-light">Search results: <span class="movies__result"></span></h2>
+                
+                <p class="alert alert-success">Use the form on the left to search for a movie</p>
+                
+                <div class="row movies__wrapper">
+                    
+                </div>
+                <nav class="d-flex flex-column align-items-center">
+                    <ul class="pagination pagination-md">
+                        <li class="page-item active" aria-current="page">
+                            <span class="page-link">1</span>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Modal -->
+    
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title movies__info__title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body movies__info__summary">
+                   
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <template class="movies__template">
+        <div class="col-12 col-md-6 col-lg-6 mb-4 card__glass">
+            <div class="card rounded-4">
+                <img class="movies__img rounded-4 w-100 h-100 mb-3" src="./images/mqdefault.jpg" alt="Movie Images">
+                
+                <div class="px-3">
+                    <h3 class="h4 mb-3 movies__title">Patton Oswalt: Annihilation</h3>
+                    
+                    <p class="d-flex align-items-center"><img class="img" src="./images/kalendar.png" alt="star" width="20" height="20"><span class="mx-2 p movies__year">2017</span></p>
+                    
+                    <p class="d-flex align-items-center"><img class="img" src="./images/start__logo.png" alt="star" width="20" height="20"><span class="mx-2 p movies__rating">7.4</span></p>
+                    
+                    <p class="d-flex align-items-center mb-3"><img class="img" src="./images/category.png" alt="star" width="20" height="20"><span class="mx-2 p movies__category">Uncatygorized</span></p>
+                    
+                    <div class="row d-flex align-items-stretch">
+                        <div class="col-12 col-lg-4 d-flex align-items-stretch"><a class="btn btn-outline-danger w-100 mb-3 movies__trailer">Trailer</a></div>
+                        <div class="col-12 col-lg-4 d-flex align-items-stretch"><button class="btn btn-outline-info w-100 mb-3 movies__info" data-bs-toggle="modal" data-bs-target="#exampleModal">More Info</button></div>
+                        <div class="col-12 col-lg-4 d-flex align-items-stretch"><button class="btn btn-outline-success w-100 mb-3">Bookmark</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/movies.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
